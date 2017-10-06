@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('Machine Clean Up') {
       steps {
-        echo 'Cleaning ...'
+        parallel(
+          "LvNgInstaller13": {
+            echo 'Cleaning ...'
+            
+          },
+          "LvNgInstaller15": {
+            echo 'Cleaning...'
+            
+          }
+        )
       }
     }
   }
